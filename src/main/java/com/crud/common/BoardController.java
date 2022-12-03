@@ -48,14 +48,13 @@ public class BoardController {
         return "redirect:/board/posts";
 
     }
-@RequestMapping(value = "/deleteok/{id}", method = RequestMethod.GET)
+@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String deletePost(@PathVariable("id") int id){
-        int i = boardDAO.deleteBoard(id);
-        if(boardDAO.deleteBoard(id)==0)
-            System.out.println("데이터 삭제 실패");
+    if(boardDAO.deleteBoard(id)==0)
+        System.out.println("데이터 삭제 실패");
         else
             System.out.println("데이터 삭제 성공!!");
-        return  "redirect:../posts";
+        return "redirect:/board/posts";
     }
 }
 
