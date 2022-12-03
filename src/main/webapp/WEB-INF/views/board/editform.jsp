@@ -14,16 +14,16 @@
 
 
 
-<form:form modelAttribute="boardVO" method="post" action = "../editok">
+<form:form modelAttribute="boardVO" method="POST" action = "../editok">
 <form:hidden path="seq"/>
+<form action="..editok/" method="post">
 
  <table id="edit">
 <tr><td>Title:</td><td><form:input path="title" /></td></tr>
 <tr><td>Writer:</td><td><form:input path="writer" /></td></tr>
 <tr><td>Content:</td><td><form:textarea cols="50" rows="5" path="content"/></td></tr>
  </table>
-	<input type="submit" value="수정하기 ">
-	<input type="submit" value="취소하기 "onclick="history.back()>
+	<button type="submit"> 수정하기 </button>
 
 
 </form:form>

@@ -32,7 +32,7 @@ public class BoardController {
             return "redirect:/board/posts";
         }
     }
-    @RequestMapping(value = "/editpost/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/editform/{id}", method = RequestMethod.GET)
     public String editPost(@PathVariable("id") int id, Model model){
         BoardVO boardVO = boardDAO.getBoard(id);
         model.addAttribute("boardVO", boardVO);
@@ -40,18 +40,18 @@ public class BoardController {
     }
     @RequestMapping(value =  "/editok", method =  RequestMethod.POST)
     public String editOK(BoardVO vo){
-        int i =boardDAO.updateBoard(vo);
+        int i = boardDAO.updateBoard(vo);
         if(i==0)
             System.out.println("데이터 수정 실패 ");
         else
             System.out.println("데이터 수정 성공!");
-        return "redirect:board/posts";
+        return "redirect:/board/posts";
 
     }
-@RequestMapping(value = "/board/delete/{id}", method = RequestMethod.GET)
+@RequestMapping(value = "/deleteok/{id}", method = RequestMethod.GET)
     public String deletePost(@PathVariable("id") int id){
         int i = boardDAO.deleteBoard(id);
-        if(i==0)
+        if(boardDAO.deleteBoard(id)==0)
             System.out.println("데이터 삭제 실패");
         else
             System.out.println("데이터 삭제 성공!!");

@@ -19,9 +19,9 @@ import javax.swing.tree.TreePath;
 public class BoardDAO {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-
-
-
+public void setTemplate(JdbcTemplate template) {
+this.jdbcTemplate = template;
+}
 
 
 	private final String BOARD_INSERT = "insert into BOARD (title, writer, content) values (?,?,?)";
@@ -62,7 +62,8 @@ public class BoardDAO {
 			BoardVO data = new BoardVO();
 			data.setSeq(rs.getInt("seq"));
 			data.setTitle(rs.getString("title"));
-			data.setRegdate(rs.getDate("regdate"));
+				data.setContent(rs.getString("content"));
+				data.setRegdate(rs.getDate("regdate"));
 			data.setWriter(rs.getString("writer"));
 			return data;
 

@@ -15,7 +15,6 @@
 <tr><td>Writer:</td><td><input type="text" name="writer"/></td></tr>
 <tr><td>Content:</td><td><textarea cols="50" rows="5" name="content"></textarea></td></tr>
 </table>
-    <button type = "button" onclick="location.href=addpost.jsp"> 목록 보기</button>
     <button type = "submit">등록하기</button>
 </form>
 

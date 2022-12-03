@@ -7,6 +7,3 @@
 <jsp:setProperty property="*" name="u"/>
 
 
-
-
-</script>

@@ -54,11 +54,11 @@
 		<td>${u.writer}</td>
 		<td>${u.content}</td>
 		<td>${u.regdate}</td>
-		<td><a href="editpost/${u.seq}">Edit</a></td>
+		<td><a href="editform/${u.seq}">Edit</a></td>
 		<td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
 	</tr>
 </c:forEach>
 </table>
-<br/><a href="addpostform.jsp">Add New Post</a>
+<br/><button type="button" onclick="location.href='add'"> Add New Post</button>
 </body>
 </html>
