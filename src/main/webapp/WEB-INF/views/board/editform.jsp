@@ -20,8 +20,16 @@
 
  <table id="edit">
 <tr><td>Title:</td><td><form:input path="title" /></td></tr>
-<tr><td>Writer:</td><td><form:input path="writer" /></td></tr>
-<tr><td>Content:</td><td><form:textarea cols="50" rows="5" path="content"/></td></tr>
+<tr><td>Singer:</td><td><form:input path="singer" /></td></tr>
+     <tr><td>Genre:</td><td><form:input path="genre" /></td></tr>
+     <tr><td>Writer:</td><td><form:input path="writer" /></td></tr>
+     <tr><td>Composer:</td><td><form:input path="composer" /></td></tr>
+     <tr><td>releaseDate:</td><td><form:input path="release" /></td></tr>
+     <tr><td>label:</td><td><form:input path="label" /></td></tr>
+
+
+
+
  </table>
 	<button type="submit"> 수정하기 </button>
 

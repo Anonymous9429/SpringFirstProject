@@ -24,8 +24,8 @@ this.jdbcTemplate = template;
 }
 
 
-	private final String BOARD_INSERT = "insert into BOARD (title, writer, content) values (?,?,?)";
-	private final String BOARD_UPDATE = "update BOARD set title=?, writer=?, content=? where seq=?";
+	private final String BOARD_INSERT = "insert into BOARD (title, singer, genre, writer, composer, releasedate, label, seq) values (?,?,?,?,?,?,?,?)";
+	private final String BOARD_UPDATE = "update BOARD set title=?, singer=?, genre=?, writer=?, composer=?, releasedate=?, label=? where seq=?";
 	private final String BOARD_DELETE = "delete from BOARD  where seq=?";
 	private final String BOARD_GET = "select * from BOARD  where seq=?";
 	private final String BOARD_LIST = "select * from BOARD order by seq desc";
@@ -34,7 +34,7 @@ this.jdbcTemplate = template;
 	public int insertBoard(BoardVO vo) {
 
 		System.out.println("===> JDBC로 insertBoard() 기능 처리");
-		return jdbcTemplate.update(BOARD_INSERT, new Object[]{vo.getTitle(), vo.getWriter(), vo.getContent()});
+		return jdbcTemplate.update(BOARD_INSERT, new Object[]{vo.getTitle(), vo.getSinger(), vo.getGenre(), vo.getWriter(), vo.getComposer(), vo.getRelease(), vo.getLabel(), vo.getSeq()});
 	}
 	// 글 삭제
 	public int deleteBoard(int id) {
@@ -43,7 +43,7 @@ this.jdbcTemplate = template;
 	}
 	public int updateBoard(BoardVO vo) {
 		System.out.println("===> JDBC로 updateBoard() 기능 처리");
-		return jdbcTemplate.update(BOARD_UPDATE, new Object[]{vo.getTitle(), vo.getWriter(), vo.getContent(), vo.getSeq()});
+		return jdbcTemplate.update(BOARD_UPDATE, new Object[]{vo.getTitle(), vo.getSinger(), vo.getGenre(), vo.getWriter(), vo.getComposer(), vo.getRelease(), vo.getLabel(), vo.getSeq()});
 
 	}	
 	
@@ -62,9 +62,13 @@ this.jdbcTemplate = template;
 			BoardVO data = new BoardVO();
 			data.setSeq(rs.getInt("seq"));
 			data.setTitle(rs.getString("title"));
-				data.setContent(rs.getString("content"));
-				data.setRegdate(rs.getDate("regdate"));
-			data.setWriter(rs.getString("writer"));
+				data.setSinger(rs.getString("singer"));
+				data.setGenre(rs.getString("genre"));
+				data.setWriter(rs.getString("writer"));
+				data.setComposer(rs.getString("composer"));
+				data.setRelease(rs.getString("releasedate"));
+				data.setLabel(rs.getString("label"));
+
 			return data;
 
 			}

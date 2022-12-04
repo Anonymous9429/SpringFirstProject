@@ -5,9 +5,12 @@ import java.util.Date;
 public class BoardVO {
 	private int seq;
 	private String title;
+	private String singer;
+	private String genre;
 	private String writer;
-	private String content;
-	private Date regdate;
+	private String composer;
+	private String release;
+	private String label;
 	private int cnt;
 	
 	public int getSeq() {
@@ -22,28 +25,55 @@ public class BoardVO {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	public String getSinger(){
+		return singer;
+	}
+	public void setSinger(String singer){
+		this.singer=singer;
+	}
+	public String getGenre(){
+		return genre;
+	}
+	public void setGenre(String genre){
+		this.genre = genre;
+	}
+
 	public String getWriter() {
 		return writer;
 	}
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
-	public String getContent() {
-		return content;
+
+	public String getComposer(){
+		return composer;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setComposer(String composer){
+		this.composer = composer;
 	}
-	public Date getRegdate() {
-		return regdate;
+	public String getRelease(){
+		return release;
 	}
-	public void setRegdate(Date regdate) {
-		this.regdate = regdate;
+	public void setRelease(String release){
+		this.release = release;
 	}
+	public String getLabel(){
+		return label;
+
+	}
+	public void setLabel(String label){
+		this.label = label;
+
+	}
+
+
 	public int getCnt() {
 		return cnt;
 	}
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
 	}
+
+
+
 }
